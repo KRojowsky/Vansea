@@ -1,4 +1,4 @@
-$nav-bg: #122620;
+$nav-bg: #1B1212;
 $nav-logo-txt: #FFF;
 $nav-btn: #B68D40;
 $nav-btn-hover: #FFF;
@@ -7,3 +7,15 @@ $nav-right-btn-bg: #D6AD60;
 $black: #000;
 $story-arrows: #DBDBDB;
 $story-arrows-hover: #808080;
+
+.section{
+    .title{
+        font-size: 2rem;
+        text-align: center;
+        padding: 1rem 0;
+
+        @media (max-width: 400px) {
+            font-size: 1.6rem;
+        }
+    }
+}
