@@ -12,10 +12,44 @@ $story-arrows-hover: #808080;
     .title{
         font-size: 2rem;
         text-align: center;
-        padding: 1rem 0;
 
         @media (max-width: 400px) {
             font-size: 1.6rem;
         }
     }
+}
+
+.arrow-left,.arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: #FFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 50%;
+    color: $story-arrows;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @media (max-width: 400px) {
+        display: none;
+    }
+}
+  
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
 }

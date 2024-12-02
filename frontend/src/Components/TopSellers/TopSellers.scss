@@ -3,14 +3,13 @@
 .top-sellers {
     position: relative;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 7rem auto 0;
     padding: 1rem;
   
     .title {
       text-align: center;
       margin-bottom: 1rem;
-      font-size: 1.8rem;
-      font-weight: bold;
+      font-size: 2.2rem;
       color: $black;
     }
   
@@ -18,22 +17,18 @@
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      gap: 1rem;
-      padding: 20px; // Dodanie symetrycznego paddingu
+      padding: 20px 0;
       box-sizing: border-box;
   
       .cards {
         display: flex;
         gap: 1rem;
-        padding-left: 10px; // Padding na karty dla większej przestrzeni na mniejszych ekranach
-        padding-right: 10px;
-        scroll-padding-left: 20px; // Zapewnia wyśrodkowanie pierwszej karty
-        scroll-padding-right: 20px; // Zapewnia wyśrodkowanie ostatniej karty
+
   
         .card {
           scroll-snap-align: center;
           flex-shrink: 0;
-          width: 200px;
+          width: 220px;
           background: #fff;
           border-radius: 10px;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -52,7 +47,7 @@
   
           img {
             width: 100%;
-            height: 120px;
+            height: 150px;
             object-fit: cover;
             border-bottom: 2px solid $black;
           }
@@ -78,32 +73,6 @@
         display: none;
       }
     }
-  
-    .arrow-left,
-    .arrow-right {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      cursor: pointer;
-      border-radius: 50%;
-      border: none;
-      background: none;
-      color: $story-arrows;
-      transition: color 0.3s ease;
-  
-      &:hover {
-        color: $story-arrows-hover;
-        transition: 0.3s;
-      }
-    }
-  
-    .arrow-left {
-      left: 10px;
-    }
-  
-    .arrow-right {
-      right: 10px;
-    }
+
   }
   

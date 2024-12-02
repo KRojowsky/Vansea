@@ -13,6 +13,24 @@ const storesData = [
   { image: placeholder, link: "#" },
   { image: placeholder, link: "#" },
   { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
+  { image: placeholder, link: "#" },
 ];
 
 const Stores = () => {
@@ -21,13 +39,13 @@ const Stores = () => {
   
   const scrollLeft = () => {
     if(storesContainerRef.current) {
-      storesContainerRef.current.scrollBy({left: -200, behavior: "smooth"});
+      storesContainerRef.current.scrollBy({left: -400, behavior: "smooth"});
     }
   }
 
   const scrollRight = () => {
     if(storesContainerRef.current) {
-      storesContainerRef.current.scrollBy({left: 200, behavior: "smooth"});
+      storesContainerRef.current.scrollBy({left: 400, behavior: "smooth"});
     }
   }
 

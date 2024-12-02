@@ -26,31 +26,31 @@
         background: none;
         padding: 0;
         cursor: pointer;
-
+      
         &:focus {
-            outline: none;
-            box-shadow: none;
+          outline: none;
+          box-shadow: none;
         }
 
         .navbar-toggler-icon {
-            background-color: transparent;
+          background-color: transparent;
+          width: 30px;
+          height: 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+
+          .bar {
+            background-color: #fff;
             width: 30px;
-            height: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
+            height: 2px;
+            border-radius: 2px;
+          }
 
-            .bar {
-                background-color: #fff;
-                width: 30px;
-                height: 2px;
-                border-radius: 2px;
-            }
-
-            .bar:not(:last-child) {
-                margin-bottom: 6px;
-            }
+          .bar:not(:last-child) {
+            margin-bottom: 6px;
+          }
         }
     }
 
@@ -122,14 +122,7 @@
         }
 
         @media (max-width: 991px) {
-            display: flex;
-            flex-direction: row; /* Ikony ułożone poziomo */
-            justify-content: center; /* Wyśrodkowanie ikon */
-            align-items: center;
-            gap: 15px; /* Optymalna przestrzeń */
-            padding-bottom: 10px; /* Poprawka marginesu */
-            margin-top: auto; /* Zapobiega spadaniu za nisko */
+            padding-bottom: 15px;
         }
     }
 }
-
