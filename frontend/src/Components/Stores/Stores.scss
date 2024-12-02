@@ -21,6 +21,29 @@
         gap: 25px;
         box-sizing: border-box;
 
+        .store {
+            scroll-snap-align: center;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
+    
+            img {
+                width: 100px;
+                height: 95px;
+                border-radius: 50%;
+                box-sizing: border-box;
+    
+                @media (max-width: 400px) {
+                    width: 75px;
+                    height: 75px;
+                }
+            }
+    
+            &:hover {
+                box-shadow: 0 0 2px 2px rgba(255, 215, 0, 1);
+                transition: 0.3s;
+            }
+        }
+
         &::-webkit-scrollbar {
             display: none;
         }
@@ -28,29 +51,6 @@
         @media (max-width: 400px) {
             gap: 10px;
             margin: 0;
-        }
-    }
-
-    .store {
-        scroll-snap-align: center;
-        border-radius: 50%;
-        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
-
-        img {
-            width: 100px;
-            height: 95px;
-            border-radius: 50%;
-            box-sizing: border-box;
-
-            @media (max-width: 400px) {
-                width: 75px;
-                height: 75px;
-            }
-        }
-
-        &:hover {
-            box-shadow: 0 0 2px 2px rgba(255, 215, 0, 1);
-            transition: 0.3s;
         }
     }
 

@@ -1,0 +1,109 @@
+@import "../../Styles/_variables.scss";
+
+.top-sellers {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  
+    .title {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $black;
+    }
+  
+    .container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 20px; // Dodanie symetrycznego paddingu
+      box-sizing: border-box;
+  
+      .cards {
+        display: flex;
+        gap: 1rem;
+        padding-left: 10px; // Padding na karty dla większej przestrzeni na mniejszych ekranach
+        padding-right: 10px;
+        scroll-padding-left: 20px; // Zapewnia wyśrodkowanie pierwszej karty
+        scroll-padding-right: 20px; // Zapewnia wyśrodkowanie ostatniej karty
+  
+        .card {
+          scroll-snap-align: center;
+          flex-shrink: 0;
+          width: 200px;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          transition: transform 0.3s ease;
+  
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+          }
+  
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+  
+          img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-bottom: 2px solid $black;
+          }
+  
+          .card-name {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 10px 0;
+            color: $black;
+          }
+  
+          .card-description {
+            font-size: 0.875rem;
+            text-align: center;
+            padding: 0 10px;
+            color: $black;
+          }
+        }
+      }
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  
+    .arrow-left,
+    .arrow-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      cursor: pointer;
+      border-radius: 50%;
+      border: none;
+      background: none;
+      color: $story-arrows;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: $story-arrows-hover;
+        transition: 0.3s;
+      }
+    }
+  
+    .arrow-left {
+      left: 10px;
+    }
+  
+    .arrow-right {
+      right: 10px;
+    }
+  }
+  
