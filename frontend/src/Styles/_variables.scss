@@ -8,16 +8,6 @@ $black: #000;
 $story-arrows: #DBDBDB;
 $story-arrows-hover: #808080;
 
-.section{
-    .title{
-        font-size: 2rem;
-        text-align: center;
-
-        @media (max-width: 400px) {
-            font-size: 1.6rem;
-        }
-    }
-}
 
 .arrow-left,.arrow-right {
     position: absolute;
@@ -36,6 +26,7 @@ $story-arrows-hover: #808080;
     color: $story-arrows;
     opacity: 0.4;
     transition: opacity 0.3s;
+    z-index: 1000;
 
     &:hover {
         opacity: 1;

@@ -16,12 +16,6 @@ const Hero = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
   };
 
-  const prevImage = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + heroImages.length) % heroImages.length
-    );
-  };
-
   const goToImage = (index) => {
     setCurrentIndex(index);
   };
