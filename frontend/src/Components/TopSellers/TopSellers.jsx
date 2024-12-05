@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./TopSellers.scss";
-import { FaStar } from "react-icons/fa"; // Importujemy ikonę gwiazdki
+import { FaStar, FaShoppingCart, FaCreditCard, FaSearchPlus } from "react-icons/fa"; // Dodajemy nowe ikony
 
 const TopSellers = ({ title, data, showFullDetails }) => {
   const containerRef = useRef(null);
@@ -79,6 +79,18 @@ const TopSellers = ({ title, data, showFullDetails }) => {
                         <span>{card.rating} ({card.reviews})</span>
                       </div>
                     )}
+                     {/* Dodajemy sekcję ikon */}
+                      <div className="card-actions">
+                        <button className="action-button">
+                          <FaShoppingCart />
+                        </button>
+                        <button className="action-button">
+                          <FaCreditCard />
+                        </button>
+                        <button className="action-button">
+                          <FaSearchPlus />
+                        </button>
+                      </div>
                   </>
                 )}
               </a>

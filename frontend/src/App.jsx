@@ -69,6 +69,8 @@ const App = () => {
       description: "Description of Lorem ipsum A",
       actual_price: "99 zł",
       old_price: "149 zł",
+      rating: 4.6,
+      reviews: 150,
     },
     {
       image: placeholder,
@@ -77,6 +79,8 @@ const App = () => {
       description: "Description of Lorem ipsum B",
       actual_price: "129 zł",
       old_price: "179 zł",
+      rating: 4.6,
+      reviews: 150,
     },
     {
       image: placeholder,
@@ -85,6 +89,8 @@ const App = () => {
       description: "Description of Lorem ipsum C",
       actual_price: "149 zł",
       old_price: "199 zł",
+      rating: 4.6,
+      reviews: 150,
     },
     {
       image: placeholder,
@@ -93,6 +99,8 @@ const App = () => {
       description: "Description of Lorem ipsum D",
       actual_price: "99 zł",
       old_price: "139 zł",
+      rating: 4.6,
+      reviews: 150,
     },
     {
       image: placeholder,
@@ -101,6 +109,8 @@ const App = () => {
       description: "Description of Lorem ipsum E",
       actual_price: "109 zł",
       old_price: "159 zł",
+      rating: 4.6,
+      reviews: 150,
     },
   ];
 
@@ -111,7 +121,7 @@ const App = () => {
       <Hero />
       <TopSellers title="lorem ipsum 0" data={secondTopSellersData} showFullDetails={false} />
       <TopSellers title="Lorem ipsum 1" data={firstTopSellersData} showFullDetails={true} />
-      <TopSellers title="Lorem ipsum 2" data={firstTopSellersData} showFullDetails={true} />
+      <TopSellers title="Lorem ipsum 2" data={secondTopSellersData} showFullDetails={true} />
     </div>
   );
 };
