@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaSearch, FaUserAlt, FaSignInAlt } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -7,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-inverse">
         <div className="container-fluid">
             <div className="navbar-header">
-                <a className="navbar-brand" href="#">Vansea</a>
+                <a className="navbar-brand" href="/">V</a>
             </div>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon">
@@ -26,7 +27,7 @@ const Navbar = () => {
                 </ul>
                 <ul className="nav navbar-nav navbar-right flex-row">
                     <li><a href="#"><FaSearch /></a></li>
-                    <li><a href="#"><FaUserAlt /></a></li>
+                    <li><Link to="/login"><FaUserAlt /></Link></li>
                     <li><a href="#"><FaSignInAlt /></a></li>
                 </ul>
             </div>

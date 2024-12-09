@@ -1,8 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Stores from "./Components/Stores/Stores";
 import Hero from "./Components/Hero/Hero";
 import TopSellers from "./Components/TopSellers/TopSellers";
+import Login from "./Components/Login/Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import placeholder from "./assets/placeholder.jpg";
@@ -115,14 +117,25 @@ const App = () => {
   ];
 
   return (
-    <div>
+    <Router>
       <Navbar />
-      <Stores />
-      <Hero />
-      <TopSellers title="lorem ipsum 0" data={secondTopSellersData} showFullDetails={false} />
-      <TopSellers title="Lorem ipsum 1" data={firstTopSellersData} showFullDetails={true} />
-      <TopSellers title="Lorem ipsum 2" data={secondTopSellersData} showFullDetails={true} />
-    </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Stores />
+              <Hero />
+              <TopSellers title="lorem ipsum 0" data={secondTopSellersData} showFullDetails={false} />
+              <TopSellers title="Lorem ipsum 1" data={firstTopSellersData} showFullDetails={true} />
+              <TopSellers title="Lorem ipsum 2" data={secondTopSellersData} showFullDetails={true} />
+
+            </>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 };
 
