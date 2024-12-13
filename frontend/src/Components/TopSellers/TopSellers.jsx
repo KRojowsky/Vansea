@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./TopSellers.scss";
-import { FaStar, FaShoppingCart, FaCreditCard, FaSearchPlus } from "react-icons/fa"; // Dodajemy nowe ikony
+import { FaStar, FaShoppingCart, FaCreditCard, FaSearchPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const TopSellers = ({ title, data, showFullDetails }) => {
   const containerRef = useRef(null);
@@ -50,14 +51,11 @@ const TopSellers = ({ title, data, showFullDetails }) => {
         <div className="cards">
           {data.map((card, index) => (
             <div className="card" key={index}>
-              <a href={card.link} target="_blank" rel="noopener noreferrer">
+              <Link to={card.link} className="card-link">
                 <img src={card.image} alt={`Card ${index + 1}`} />
                 <p className="card-name">{card.name}</p>
-
-                {/* Wyświetlanie tylko nazwy i opisu w pierwszym przypadku */}
                 <p className="card-description">{card.description}</p>
 
-                {/* Wyświetlanie cen i oceny tylko w przypadku, gdy showFullDetails jest true */}
                 {showFullDetails && (
                   <>
                     <div className="prices">
@@ -79,7 +77,6 @@ const TopSellers = ({ title, data, showFullDetails }) => {
                         <span>{card.rating} ({card.reviews})</span>
                       </div>
                     )}
-                     {/* Dodajemy sekcję ikon */}
                       <div className="card-actions">
                         <button className="action-button">
                           <FaShoppingCart />
@@ -93,7 +90,7 @@ const TopSellers = ({ title, data, showFullDetails }) => {
                       </div>
                   </>
                 )}
-              </a>
+              </Link>
             </div>
           ))}
         </div>
