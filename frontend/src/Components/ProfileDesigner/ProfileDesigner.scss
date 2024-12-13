@@ -1,0 +1,87 @@
+.designer-profile {
+    .designer-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .designer-image {
+        width: 200px;
+        height: 200px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      .designer-details {
+        margin-left: 20px;
+        .designer-name {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .designer-description {
+          font-size: 1.2rem;
+          color: #555;
+        }
+      }
+    }
+  
+    .designer-reviews {
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      .review-item {
+        display: flex;
+        align-items: flex-start;
+        .review-user-image {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+        }
+        .review-details {
+          margin-left: 15px;
+          .review-username {
+            font-weight: bold;
+          }
+          .review-text {
+            font-style: italic;
+            margin: 5px 0;
+          }
+          .review-rating {
+            color: gold;
+          }
+          .review-date {
+            font-size: 0.9rem;
+            color: #777;
+          }
+        }
+      }
+    }
+  
+    .designer-projects {
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      .project-card {
+        .card-img-top {
+          height: 200px;
+          object-fit: cover;
+        }
+        .card-body {
+          padding: 15px;
+          .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+          .card-text {
+            font-size: 1rem;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+  

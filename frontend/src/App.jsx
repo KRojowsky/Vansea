@@ -6,11 +6,50 @@ import Hero from "./Components/Hero/Hero";
 import TopSellers from "./Components/TopSellers/TopSellers";
 import Login from "./Components/Login/Login";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
+import DesignerProfile from "./Components/ProfileDesigner/ProfileDesigner";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import placeholder from "./assets/placeholder.jpg";
 
 const App = () => {
+  const zeroTopSellersData = [
+    {
+      id: 21,
+      image: placeholder,
+      link: "#",
+      name: "Lorem ipsum 111",
+      description: "Description of Lorem ipsum 111",
+    },
+    {
+      id: 22,
+      image: placeholder,
+      link: "#",
+      name: "Lorem ipsum 222",
+      description: "Description of Lorem ipsum 222",
+    },
+    {
+      id: 23,
+      image: placeholder,
+      link: "#",
+      name: "Lorem ipsum 333",
+      description: "Description of Lorem ipsum 333",
+    },
+    {
+      id: 24,
+      image: placeholder,
+      link: "#",
+      name: "Lorem ipsum 444",
+      description: "Description of Lorem ipsum 444",
+    },
+    {
+      id: 25,
+      image: placeholder,
+      link: "#",
+      name: "Lorem ipsum 555",
+      description: "Description of Lorem ipsum 555",
+    },
+  ];
+
   const firstTopSellersData = [
     {
       id: 11,
@@ -54,7 +93,7 @@ const App = () => {
       actual_price: "99 zł",
       old_price: "139 zł",
       rating: 4.8,
-      reviews: 99,
+      reviews: 199,
     },
     {
       id: 15,
@@ -65,7 +104,7 @@ const App = () => {
       actual_price: "109 zł",
       old_price: "159 zł",
       rating: 4.6,
-      reviews: 150,
+      reviews: 180,
     },
   ];
 
@@ -90,7 +129,8 @@ const App = () => {
       actual_price: "129 zł",
       old_price: "179 zł",
       rating: 4.6,
-      reviews: 150,
+      reviews: 190,
+      authorId: 1,
       productReviews: [
         {
           username: "Lorem ipsum1",
@@ -117,7 +157,7 @@ const App = () => {
       actual_price: "149 zł",
       old_price: "199 zł",
       rating: 4.6,
-      reviews: 150,
+      reviews: 170,
     },
     {
       id: 4,
@@ -143,6 +183,73 @@ const App = () => {
     },
   ];
 
+  const designersData = [
+    {
+      id: 1,
+      name: "Anna Nowak",
+      image: placeholder,
+      description: "Anna Nowak to utalentowana projektantka mody z Warszawy, znana z nowoczesnych i eleganckich projektów.",
+      projects: [
+        {
+          id: 101,
+          name: "Suknia Wieczorowa",
+          image: placeholder,
+          description: "Piękna suknia wieczorowa na specjalne okazje.",
+          actual_price: "99 zł", // Cena aktualna
+          old_price: "139 zł",   // Cena poprzednia
+          rating: 4.6,           // Ocena
+          reviews: 150           // Liczba recenzji
+        },
+        {
+          id: 102,
+          name: "Kolekcja Jesień 2024",
+          image: placeholder,
+          description: "Stylowe płaszcze i akcesoria na chłodne dni.",
+          actual_price: "199 zł", // Cena aktualna
+          old_price: "249 zł",    // Cena poprzednia
+          rating: 4.3,            // Ocena
+          reviews: 120            // Liczba recenzji
+        },
+      ],
+      reviews: [
+        {
+          username: "Karolina",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-01",
+          rating: 5,
+          text: "Niesamowita jakość projektów! Polecam Annę każdemu.",
+        },
+        {
+          username: "Janek",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-05",
+          rating: 4,
+          text: "Bardzo dobrze wykonane ubrania, ale czas realizacji mógłby być krótszy.",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Michał Kowalski",
+      image: placeholder,
+      description: "Michał Kowalski specjalizuje się w minimalistycznych projektach o ponadczasowym charakterze.",
+      projects: [
+        { id: 201, name: "Marynarka Slim Fit", image: placeholder, description: "Elegancka marynarka do pracy i na spotkania biznesowe." },
+        { id: 202, name: "Kolekcja Sportowa", image: placeholder, description: "Wygodne ubrania sportowe wykonane z najlepszych materiałów." },
+      ],
+      reviews: [
+        {
+          username: "Aleksandra",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-02",
+          rating: 5,
+          text: "Najlepsze ubrania, jakie miałam. Polecam każdemu!",
+        },
+      ],
+    },
+  ];
+  
+
   return (
     <Router>
       <Navbar />
@@ -153,7 +260,7 @@ const App = () => {
             <>
               <Stores />
               <Hero />
-              <TopSellers title="lorem ipsum 0" data={secondTopSellersData} showFullDetails={false} />
+              <TopSellers title="lorem ipsum 0" data={zeroTopSellersData} showFullDetails={false} />
               <TopSellers title="Lorem ipsum 1" data={firstTopSellersData} showFullDetails={true} />
               <TopSellers title="Lorem ipsum 2" data={secondTopSellersData} showFullDetails={true} />
 
@@ -164,6 +271,10 @@ const App = () => {
         <Route
           path="/product/:id"
           element={<ProductDetails data={[...firstTopSellersData, ...secondTopSellersData]} />}
+        />
+        <Route
+          path="/designer/:id"
+          element={<DesignerProfile designersData={designersData} />}
         />
       </Routes>
     </Router>

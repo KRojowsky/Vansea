@@ -1,20 +1,28 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaCreditCard, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Reviews from "../Reviews/Reviews";
+import TopSellers from "../TopSellers/TopSellers";
 import placeholder from "../../assets/placeholder.jpg";
 import "./ProductDetails.scss";
 
 const ProductDetails = ({ data }) => {
-  const { id } = useParams(); // Pobieramy ID z URL
+  const { id } = useParams();
   const navigate = useNavigate();
 
-  // Znajdujemy produkt na podstawie ID
+  // Znalezienie produktu na podstawie id
   const product = data.find((item) => item.id === parseInt(id));
 
   if (!product) {
     return <div>Produkt nie znaleziony</div>;
   }
+
+  // Na podstawie produktu możemy stworzyć dane dla rekomendowanych produktów
+  const recommendedProducts = data.filter(
+    (item) =>
+      item.id !== product.id && item.rating >= 4 && item.reviews >= 160
+  );
 
   return (
     <div className="product-details container py-4">
@@ -25,6 +33,10 @@ const ProductDetails = ({ data }) => {
             alt={product.name}
             className="img-fluid rounded shadow-sm"
           />
+          {/* Zmieniamy link na dynamiczny na podstawie authorId */}
+          <Link to={`/designer/${product.authorId}`} className="author-image">
+            <img src={product.authorImage || placeholder} alt="Autor" />
+          </Link>
         </div>
         <div className="product-info col-12 col-md-6">
           <h2 className="product-name">{product.name}</h2>
@@ -67,11 +79,8 @@ const ProductDetails = ({ data }) => {
         </div>
       </div>
 
-      {product.productReviews && product.productReviews.length > 0 ? (
-        <Reviews reviews={product.productReviews} />
-      ) : (
-        <div className="no-reviews">Brak opinii dla tego produktu</div>
-      )}
+      <Reviews reviews={product.productReviews || []} />
+      <TopSellers title="Lorem ipsum" data={recommendedProducts} showFullDetails={true} />
 
       <div className="back-button text-center mt-4">
         <button className="btn btn-outline-secondary" onClick={() => navigate(-1)}>
