@@ -183,6 +183,25 @@ const App = () => {
     },
   ];
 
+  const homepageStores = [
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+    { image: placeholder, link: "#" },
+  ];
+
   const designersData = [
     {
       id: 1,
@@ -195,20 +214,20 @@ const App = () => {
           name: "Suknia Wieczorowa",
           image: placeholder,
           description: "Piękna suknia wieczorowa na specjalne okazje.",
-          actual_price: "99 zł", // Cena aktualna
-          old_price: "139 zł",   // Cena poprzednia
-          rating: 4.6,           // Ocena
-          reviews: 150           // Liczba recenzji
+          actual_price: "99 zł",
+          old_price: "139 zł",
+          rating: 4.6, 
+          reviews: 150
         },
         {
           id: 102,
           name: "Kolekcja Jesień 2024",
           image: placeholder,
           description: "Stylowe płaszcze i akcesoria na chłodne dni.",
-          actual_price: "199 zł", // Cena aktualna
-          old_price: "249 zł",    // Cena poprzednia
-          rating: 4.3,            // Ocena
-          reviews: 120            // Liczba recenzji
+          actual_price: "199 zł",
+          old_price: "249 zł",   
+          rating: 4.3,            
+          reviews: 120 
         },
       ],
       reviews: [
@@ -226,6 +245,22 @@ const App = () => {
           rating: 4,
           text: "Bardzo dobrze wykonane ubrania, ale czas realizacji mógłby być krótszy.",
         },
+      ],
+      stories: [
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
       ],
     },
     {
@@ -246,6 +281,22 @@ const App = () => {
           text: "Najlepsze ubrania, jakie miałam. Polecam każdemu!",
         },
       ],
+      stories: [
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+        { image: placeholder, link: "#" },
+      ],
     },
   ];
   
@@ -254,24 +305,29 @@ const App = () => {
     <Router>
       <Navbar />
       <Routes>
+        {/* Homepage */}
         <Route
           path="/"
           element={
             <>
-              <Stores />
+              {/* Stores Section */}
+              <Stores storesData={homepageStores} />
               <Hero />
-              <TopSellers title="lorem ipsum 0" data={zeroTopSellersData} showFullDetails={false} />
               <TopSellers title="Lorem ipsum 1" data={firstTopSellersData} showFullDetails={true} />
               <TopSellers title="Lorem ipsum 2" data={secondTopSellersData} showFullDetails={true} />
-
             </>
           }
         />
+        {/* Login */}
         <Route path="/login" element={<Login />} />
+
+        {/* Product Details */}
         <Route
           path="/product/:id"
           element={<ProductDetails data={[...firstTopSellersData, ...secondTopSellersData]} />}
         />
+
+        {/* Designer Profile */}
         <Route
           path="/designer/:id"
           element={<DesignerProfile designersData={designersData} />}
