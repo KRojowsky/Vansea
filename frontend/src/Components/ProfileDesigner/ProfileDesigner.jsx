@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Reviews from "../Reviews/Reviews";
 import TopSellers from "../TopSellers/TopSellers";
-import Stores from "../Stores/Stores"; // Import the Stores component
+import Stores from "../Stores/Stores";
 import placeholder from "../../assets/placeholder.jpg";
 
 const DesignerProfile = ({ designersData }) => {

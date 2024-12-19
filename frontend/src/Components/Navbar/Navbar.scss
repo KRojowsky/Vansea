@@ -59,7 +59,7 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        transition: transform 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; /* Zmienione na 'all' zamiast 'transform' */
 
         @media (max-width: 991px) {
             position: fixed;
@@ -74,10 +74,11 @@
             transform: translateY(-100%);
             visibility: hidden;
             opacity: 0;
+            transition: all 0.3s ease-in-out; /* Dodano płynność */
         }
 
         &.show {
-            transform: translateY(0);
+            transform: translateY(0); /* Menu rozwinięte */
             visibility: visible;
             opacity: 1;
         }

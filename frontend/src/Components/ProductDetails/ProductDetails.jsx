@@ -11,14 +11,12 @@ const ProductDetails = ({ data }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Znalezienie produktu na podstawie id
   const product = data.find((item) => item.id === parseInt(id));
 
   if (!product) {
     return <div>Produkt nie znaleziony</div>;
   }
 
-  // Na podstawie produktu możemy stworzyć dane dla rekomendowanych produktów
   const recommendedProducts = data.filter(
     (item) =>
       item.id !== product.id && item.rating >= 4 && item.reviews >= 160
@@ -33,7 +31,6 @@ const ProductDetails = ({ data }) => {
             alt={product.name}
             className="img-fluid rounded shadow-sm"
           />
-          {/* Zmieniamy link na dynamiczny na podstawie authorId */}
           <Link to={`/designer/${product.authorId}`} className="author-image">
             <img src={product.authorImage || placeholder} alt="Autor" />
           </Link>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Hero.scss";
 import placeholder from "../../assets/placeholder.jpg";
+import placeholder2 from "../../assets/placeholder2.jpg";
 
 const heroImages = [
-  { src: placeholder , alt: "Image 1" },
+  { src: placeholder2 , alt: "Image 1" },
   { src: placeholder , alt: "Image 2" },
-  { src: placeholder , alt: "Image 3" },
+  { src: placeholder2 , alt: "Image 3" },
   { src: placeholder , alt: "Image 4" },
 ];
 

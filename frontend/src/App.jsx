@@ -5,45 +5,48 @@ import Stores from "./Components/Stores/Stores";
 import Hero from "./Components/Hero/Hero";
 import TopSellers from "./Components/TopSellers/TopSellers";
 import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import DesignerProfile from "./Components/ProfileDesigner/ProfileDesigner";
+import ScrollToTop from "./Components/ScrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import placeholder from "./assets/placeholder.jpg";
+import placeholder2 from "./assets/placeholder2.jpg";
 
 const App = () => {
   const zeroTopSellersData = [
     {
       id: 21,
-      image: placeholder,
+      image: placeholder2,
       link: "#",
       name: "Lorem ipsum 111",
       description: "Description of Lorem ipsum 111",
     },
     {
       id: 22,
-      image: placeholder,
+      image: placeholder2,
       link: "#",
       name: "Lorem ipsum 222",
       description: "Description of Lorem ipsum 222",
     },
     {
       id: 23,
-      image: placeholder,
+      image: placeholder2,
       link: "#",
       name: "Lorem ipsum 333",
       description: "Description of Lorem ipsum 333",
     },
     {
       id: 24,
-      image: placeholder,
+      image: placeholder2,
       link: "#",
       name: "Lorem ipsum 444",
       description: "Description of Lorem ipsum 444",
     },
     {
       id: 25,
-      image: placeholder,
+      image: placeholder2,
       link: "#",
       name: "Lorem ipsum 555",
       description: "Description of Lorem ipsum 555",
@@ -61,6 +64,23 @@ const App = () => {
       old_price: "149 zł",
       rating: 3.93,
       reviews: 432,
+      authorId: 1,
+      productReviews: [
+        {
+          username: "Lorem ipsum1",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-10",
+          rating: 5,
+          text: "Lorem ipsum11",
+        },
+        {
+          username: "Lorem ipsum2",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-12",
+          rating: 4,
+          text: "Lorem ipsum122",
+        },
+      ],
     },
     {
       id: 12,
@@ -72,6 +92,23 @@ const App = () => {
       old_price: "179 zł",
       rating: 1.7,
       reviews: 512,
+      authorId: 1,
+      productReviews: [
+        {
+          username: "Lorem ipsum1",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-10",
+          rating: 5,
+          text: "Lorem ipsum11",
+        },
+        {
+          username: "Lorem ipsum2",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-12",
+          rating: 4,
+          text: "Lorem ipsum122",
+        },
+      ],
     },
     {
       id: 13,
@@ -83,6 +120,23 @@ const App = () => {
       old_price: "199 zł",
       rating: 4.2,
       reviews: 200,
+      authorId: 1,
+      productReviews: [
+        {
+          username: "Lorem ipsum1",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-10",
+          rating: 5,
+          text: "Lorem ipsum11",
+        },
+        {
+          username: "Lorem ipsum2",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-12",
+          rating: 4,
+          text: "Lorem ipsum122",
+        },
+      ],
     },
     {
       id: 14,
@@ -94,6 +148,23 @@ const App = () => {
       old_price: "139 zł",
       rating: 4.8,
       reviews: 199,
+      authorId: 1,
+      productReviews: [
+        {
+          username: "Lorem ipsum1",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-10",
+          rating: 5,
+          text: "Lorem ipsum11",
+        },
+        {
+          username: "Lorem ipsum2",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-12",
+          rating: 4,
+          text: "Lorem ipsum122",
+        },
+      ],
     },
     {
       id: 15,
@@ -105,6 +176,23 @@ const App = () => {
       old_price: "159 zł",
       rating: 4.6,
       reviews: 180,
+      authorId: 1,
+      productReviews: [
+        {
+          username: "Lorem ipsum1",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-10",
+          rating: 5,
+          text: "Lorem ipsum11",
+        },
+        {
+          username: "Lorem ipsum2",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-12",
+          rating: 4,
+          text: "Lorem ipsum122",
+        },
+      ],
     },
   ];
 
@@ -158,6 +246,23 @@ const App = () => {
       old_price: "199 zł",
       rating: 4.6,
       reviews: 170,
+      authorId: 1,
+      productReviews: [
+        {
+          username: "Lorem ipsum1",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-10",
+          rating: 5,
+          text: "Lorem ipsum11",
+        },
+        {
+          username: "Lorem ipsum2",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-12",
+          rating: 4,
+          text: "Lorem ipsum122",
+        },
+      ],
     },
     {
       id: 4,
@@ -169,6 +274,23 @@ const App = () => {
       old_price: "139 zł",
       rating: 4.6,
       reviews: 150,
+      authorId: 1,
+      productReviews: [
+        {
+          username: "Lorem ipsum1",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-10",
+          rating: 5,
+          text: "Lorem ipsum11",
+        },
+        {
+          username: "Lorem ipsum2",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-12",
+          rating: 4,
+          text: "Lorem ipsum122",
+        },
+      ],
     },
     {
       id: 5,
@@ -180,6 +302,23 @@ const App = () => {
       old_price: "159 zł",
       rating: 4.6,
       reviews: 150,
+      authorId: 1,
+      productReviews: [
+        {
+          username: "Lorem ipsum1",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-10",
+          rating: 5,
+          text: "Lorem ipsum11",
+        },
+        {
+          username: "Lorem ipsum2",
+          userImage: "https://via.placeholder.com/50",
+          date: "2024-12-12",
+          rating: 4,
+          text: "Lorem ipsum122",
+        },
+      ],
     },
   ];
 
@@ -281,45 +420,32 @@ const App = () => {
           text: "Najlepsze ubrania, jakie miałam. Polecam każdemu!",
         },
       ],
-      stories: [
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-        { image: placeholder, link: "#" },
-      ],
+
     },
   ];
-  
 
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
-        {/* Homepage */}
         <Route
           path="/"
           element={
             <>
-              {/* Stores Section */}
               <Stores storesData={homepageStores} />
               <Hero />
-              <TopSellers title="Lorem ipsum 1" data={firstTopSellersData} showFullDetails={true} />
-              <TopSellers title="Lorem ipsum 2" data={secondTopSellersData} showFullDetails={true} />
+              <TopSellers title="Lorem ipsum 1" data={zeroTopSellersData} showFullDetails={false} />
+              <TopSellers title="Lorem ipsum 2" data={firstTopSellersData} showFullDetails={true} />
+              <TopSellers title="Lorem ipsum 3" data={secondTopSellersData} showFullDetails={true} />
             </>
           }
         />
         {/* Login */}
         <Route path="/login" element={<Login />} />
+
+        {/* Rejestracja */}
+        <Route path="/register" element={<Register />} />
 
         {/* Product Details */}
         <Route

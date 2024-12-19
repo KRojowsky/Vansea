@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.scss";
 
 const Login = () => {
@@ -51,8 +52,7 @@ const Login = () => {
 
         <div className="login-options">
           <p className="login-help-text">
-            Nie masz konta?
-              Zarejestruj się
+            Nie masz konta? <Link to="/register">Zarejestruj się</Link>
           </p>
           <p className="login-help-text">
               Zapomniałeś hasła?
